@@ -12,11 +12,7 @@ module Locomotive
         'localhost'
 
       subject = new_content_entry_subject(entry, domain: @domain, type: @type.name, locale: account.locale)
-      from    = (if top_level_domain = Adomain.domain(@domain)
-         "noreply@#{top_level_domain}"
-      else
-        Locomotive.config.mailer_sender
-      end)
+      from    = Locomotive.config.mailer_sender
 
       # attach uploaded files
       if @type.public_submission_email_attachments
