@@ -24,7 +24,7 @@ module Locomotive
     field :handle
     field :raw_template,        localize: true
     field :locales,             type: Array
-    field :published,           type: Boolean, default: false
+    field :published,           type: Boolean, default: false, localize: true
     field :cache_strategy,      default: 'none'
     field :response_type,       default: 'text/html'
 
